@@ -11,7 +11,7 @@ body{
      background-size: cover;
    }
    
-   #btn{
+   #show-posts{
      border: 5px solid #4169E1;
      color: #ffff;
      background-color:#3498db;
@@ -21,7 +21,7 @@ body{
      margin-left:25px;
      
    }
-     #btn:hover {
+     #show-posts:hover {
      box-shadow: 4px 4px gainsboro;
    }
    
@@ -32,13 +32,12 @@ body{
      
    }
    
-   #Show-comments {
+   .show-comments {
      font-family:Trebuchet MS;
      border: 5px solid #4169E1;
      color: #ffff;
      background-color:#3498db;
      padding: 5px 5px;
-     display:none;
    }
    
     #Show-comments:hover {

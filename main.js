@@ -1,6 +1,6 @@
 
 var c;
-$('#btn').click(function(){
+$('#show-posts').click(function(){
   $.getJSON('https://jsonplaceholder.typicode.com/posts?callback=?', function(posts){
   $.getJSON('https://jsonplaceholder.typicode.com/comments?callback=?', function(comments){
     c = comments;
@@ -11,21 +11,20 @@ $('#btn').click(function(){
     var postCount = 0;
     var list = '<ul>';
 
-    for(var post in posts){ // loop through posts
-
+    for(var post in posts){ 
       if(postCount == 10){
         break;
       }
 
       list += '<li>'+posts[post].title; 
-      var commentCount = 0; // when its 
+      var commentCount = 0;
       
-      // comments list
+      
       var commentList = '<ul>';
       for(var comment in comments){
         if(commentCount === 3){
+          commentList += '<button class="show-comments" data-postid="'+posts[post].id+'">show more</button>';
           break;
-          commentList += '<input id="Show-comments" data-postId="'+posts[post].id+'">show more comments</input>';
         }
         
         if(posts[post].id === comments[comment].postId){
@@ -43,15 +42,23 @@ $('#btn').click(function(){
     list += '</ul>';
 
     $('#data').html(list);
-    $('#btn').hide(); 
-   $('#Show-comments').show();
-   
+    $('#show-posts').hide(); 
   });
 
 
-$('#Show-comments').click(function(){
+  $(document).on('click', '.show-comments', function(){
+// $('.show-comments').on('click',function(){
+var self = $(this);
+var postid = self.data('postid');
+var countComments = c.length;
 
+for(var i = 0; i < countComments; i++){
+  if(postid === c[i].postId){
+    self.parent().append('<li>'+c[i].body+'</li>');
+  }
+}
 
+self.hide();
 
   //loop through comments and get only the ones with this postId
   // create <li>comment</li>
