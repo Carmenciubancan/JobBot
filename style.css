@@ -1,0 +1,45 @@
+body{
+    color:#696969;
+    font-family:Trebuchet MS;
+   }
+   
+   html { 
+     background: url("business-pug.jpg") no-repeat center center fixed; 
+     -webkit-background-size: cover;
+     -moz-background-size: cover;
+     -o-background-size: cover;
+     background-size: cover;
+   }
+   
+   #btn{
+     border: 5px solid #4169E1;
+     color: #ffff;
+     background-color:#3498db;
+     padding: 10px 10px;
+     font-family:Trebuchet MS;
+     position:absolute;
+     margin-left:25px;
+     
+   }
+     #btn:hover {
+     box-shadow: 4px 4px gainsboro;
+   }
+   
+   #data{
+     width:400px;
+     height:100px;
+     font-family:Trebuchet MS;
+     
+   }
+   
+   #Show-comments {
+     font-family:Trebuchet MS;
+     border: 5px solid #4169E1;
+     color: #ffff;
+     background-color:#3498db;
+     padding: 5px 5px;
+     display:none;
+   }
+   
+    #Show-comments:hover {
+     box-shadow: 4px 4px gainsboro;}
