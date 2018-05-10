@@ -1,12 +1,9 @@
-
 var c;
 $('#show-posts').click(function(){
   $.getJSON('https://jsonplaceholder.typicode.com/posts?callback=?', function(posts){
   $.getJSON('https://jsonplaceholder.typicode.com/comments?callback=?', function(comments){
     c = comments;
-    console.log(posts);
-    console.log(comments);
-
+    
 
     var postCount = 0;
     var list = '<ul>';
@@ -47,7 +44,6 @@ $('#show-posts').click(function(){
 
 
   $(document).on('click', '.show-comments', function(){
-// $('.show-comments').on('click',function(){
 var self = $(this);
 var postid = self.data('postid');
 var countComments = c.length;
@@ -60,9 +56,6 @@ for(var i = 0; i < countComments; i++){
 
 self.hide();
 
-  //loop through comments and get only the ones with this postId
-  // create <li>comment</li>
-  // hide this button and show list created
 });
     
   })
